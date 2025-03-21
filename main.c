@@ -10,6 +10,8 @@ struct pessoa{
 
 typedef struct pessoa pessoa;
 
+char verify(char ec[4]);
+
 int main(int argc, char *argv[]){
     setlocale(LC_ALL, "Portuguese");
 
@@ -43,16 +45,17 @@ int main(int argc, char *argv[]){
             break;
         case 5: 
             printf("Insano solicitado. Tem certeza disso? ");
-            scanf("%3s", ec);
-            if(ec == "y"){
-                printf("Insano selecionado. Boa sorte, você irá precisar.\n");
-            } else {
-                printf("failed.\n");
-            }
+            scanf("%s", ec);
+            char verify();
             break;
     }
-    
+}
 
-
-
+char verify(char ec[4]){
+    if(ec == "yes"){
+        printf("Boa sorte, tu vai precisar muito.");
+    }
+    else {
+        printf("Retorne ao processo inicial.");
+    }
 }
